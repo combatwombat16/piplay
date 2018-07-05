@@ -1,27 +1,37 @@
+#! /usr/bin/python3
+
+from helpers import convertCToF#, get_datetime
 import subprocess
+import os
 
-def get_memoryinfo():
+def get_memory_stats():
 	mem_stats = {}
-	ms = str(subprocess.check_output(["free"]), "utf-8")
-	ms_split_col = ms.split('\n')
-	names = ["total","used","free","shared","buffer","available"]
-	for col in range(len(ms_split_col)):
-		row =  ms_split_col[col].split()
-		if(col == 1):
-			for field in range(len(row)):
-				if(field > 0):
-					mem_stats[names(field)] = col[field]
+	tot_m, used_m, free_m, shared, buff, avail = map(int, os.popen('free -b').readlines()[-2].split()[1:])
+	mem_stats["memory_total"] = tot_m
+	mem_stats["memory_used"] = used_m
+	mem_stats["memory_free"] = free_m
+	mem_stats["memory_shared"] = shared
+	mem_stats["memory_buffered"] = buff
+	mem_stats["memory_available"] = avail
 	return mem_stats
-#		if(col == 0):
-#			for field in range(len(row)):
-#				names[str(field, "utf-8")] = col[field]
-#	mem_stats["free"] = ms_split[0]
 
-def get_sysinfo():
+def get_swap_stats():
+	swap_stats = {}
+	tot_s, used_s, free_s = map(int, os.popen('free -b').readlines()[-1].split()[1:])
+	swap_stats["swap_total"] = tot_s
+	swap_stats["swap_used"] = used_s
+	swap_stats["swap_free"] = free_s
+	return swap_stats
+
+def get_sysinfo(impOrMet):
 	sys_dict = {}
-	sys_dict["temperature_cpu"] = float(str(subprocess.check_output(["/opt/vc/bin/vcgencmd", "measure_temp"]), "utf-8").replace('\n','').split("=")[1].split("'")[0])
+	if(impOrMet == "imperial"):
+		sys_dict["temperature_cpu"] = convertCToF(float(str(subprocess.check_output(["/opt/vc/bin/vcgencmd", "measure_temp"]), "utf-8").replace('\n','').split("=")[1].split("'")[0]))
+	else:
+		sys_dict["temperature_cpu"] = float(str(subprocess.check_output(["/opt/vc/bin/vcgencmd", "measure_temp"]), "utf-8").replace('\n','').split("=")[1].split("'")[0])
 	sys_dict["frequency_cpu"] = int(str(subprocess.check_output(["cat", "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"]),"utf-8").replace('\n',''))
-	#sys_dict["memory"] = get_memory_stats()
+	sys_dict["memory"] = get_memory_stats()
+	sys_dict["swap"] = get_swap_stats()
+	#sys_dict["timestamp"] = get_datetime()["timestamp"]
 	return sys_dict
 
-#print(get_memoryinfo())
