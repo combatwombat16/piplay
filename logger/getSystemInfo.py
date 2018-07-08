@@ -1,26 +1,26 @@
 #! /usr/bin/python3
 
-from helpers import convertCToF#, get_datetime
+from helpers import convertCToF
 import subprocess
 import os
 
 def get_memory_stats():
 	mem_stats = {}
 	tot_m, used_m, free_m, shared, buff, avail = map(int, os.popen('free -b').readlines()[-2].split()[1:])
-	mem_stats["memory_total"] = tot_m
-	mem_stats["memory_used"] = used_m
-	mem_stats["memory_free"] = free_m
-	mem_stats["memory_shared"] = shared
-	mem_stats["memory_buffered"] = buff
-	mem_stats["memory_available"] = avail
+	mem_stats["total"] = tot_m
+	mem_stats["used"] = used_m
+	mem_stats["free"] = free_m
+	mem_stats["shared"] = shared
+	mem_stats["buffered"] = buff
+	mem_stats["available"] = avail
 	return mem_stats
 
 def get_swap_stats():
 	swap_stats = {}
 	tot_s, used_s, free_s = map(int, os.popen('free -b').readlines()[-1].split()[1:])
-	swap_stats["swap_total"] = tot_s
-	swap_stats["swap_used"] = used_s
-	swap_stats["swap_free"] = free_s
+	swap_stats["total"] = tot_s
+	swap_stats["used"] = used_s
+	swap_stats["free"] = free_s
 	return swap_stats
 
 def get_sysinfo(impOrMet):

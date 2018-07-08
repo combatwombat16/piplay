@@ -1,4 +1,3 @@
-#from getDateTimeInfo import get_datetime
 from getSenseHatStats import get_stats
 from getSystemInfo import get_sysinfo
 from helpers import get_datetime
@@ -9,7 +8,7 @@ def make_stat_dict(name, payload):
 	return {"host": socket.gethostname().split(".")[0], "type": name, "data": payload, "timestamp": get_datetime()["epoch"]}
 
 def dict_to_line_protocol(stat):
-	"%s,host=%s %s" % (stat["type"],stat["host"],stat["epoch"])
+	"%s,host=%s %s" % (stat["type"], stat["host"], stat["epoch"])
 
 stats = []
 #stats.append(make_stat_dict("DateTime", get_datetime()))

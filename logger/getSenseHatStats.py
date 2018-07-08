@@ -1,7 +1,7 @@
 #! /bin/python3
 
 from sense_hat import SenseHat
-from helpers import convertCToF, convertmbToPSI#, get_datetime
+from helpers import convertCToF, convertmbToPSI
 
 sense = SenseHat()
 sense.clear()
@@ -12,13 +12,13 @@ def get_stats(impOrMet):
 	#% relative
 	stat_dict["humidity"] = sense.get_humidity()
 	if (impOrMet == "imperial"):
-		stat_dict["temperature_from_humidity"] = sense.get_temperature_from_humidity()
-		stat_dict["temperature_from_pressure"] = sense.get_temperature_from_pressure()
-		stat_dict["pressure"] = sense.get_pressure()
-	else:
 		stat_dict["temperature_from_humidity"] = convertCToF(sense.get_temperature_from_humidity())
 		stat_dict["temperature_from_pressure"] = convertCToF(sense.get_temperature_from_pressure())
 		stat_dict["pressure"] = convertmbToPSI(sense.get_pressure())
+	else:
+		stat_dict["temperature_from_humidity"] = sense.get_temperature_from_humidity()
+		stat_dict["temperature_from_pressure"] = sense.get_temperature_from_pressure()
+		stat_dict["pressure"] = sense.get_pressure()
 	stat_dict["orientation_radians"] = sense.get_orientation_radians()
 	stat_dict["orientation_degress"] = sense.get_orientation_degrees()
 	#magnetic intensity in microteslas
