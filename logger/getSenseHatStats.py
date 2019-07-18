@@ -1,7 +1,7 @@
-#! /bin/python3
-
+import sys
+sys.path.append("../")
 from sense_hat import SenseHat
-from helpers import convertCToF, convertmbToPSI
+from helpers.helpers import convertCToF, convertmbToPSI
 
 sense = SenseHat()
 sense.clear()

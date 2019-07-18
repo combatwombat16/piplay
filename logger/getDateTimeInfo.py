@@ -1,7 +1,6 @@
-#! /usr/bin/python3
-
+import sys, pytz
+sys.path.append("../")
 from datetime import datetime
-import pytz
 
 def get_datetime():
 	datetime_dict = {}

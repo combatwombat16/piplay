@@ -1,5 +1,5 @@
-#! /usr/bin/python3
-
+import sys
+sys.path.append("../")
 def convertCToF(tempInC):
 	return (tempInC * 1.8) + 32
 

@@ -1,5 +1,5 @@
-#! /usr/bin/python3
-
+import sys
+sys.path.append("../")
 from picamera import PiCamera
 from time import sleep
 from initialize import init_picture

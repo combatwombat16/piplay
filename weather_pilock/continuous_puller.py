@@ -1,7 +1,9 @@
+import sys, json, socket
+sys.path.append("../")
 from SenseHat_Data import Sensor
 from helpers import get_datetime
-import json
-import socket
+
+
 
 def make_stat_dict(name, payload):
         return {"host": socket.gethostname().split(".")[0], "type": name, "data": payload, "timestamp": get_datetime()["epoch"]}

@@ -1,6 +1,8 @@
+import sys, json, socket
+sys.path.append("../")
 from getSenseHatStats import get_stats
 from getSystemInfo import get_sysinfo
-from helpers import get_datetime
+from helpers.helpers import get_datetime
 import json
 import socket
 

@@ -1,4 +1,5 @@
-#! /usr/bin/python3
+import sys
+sys.path.append("../")
 
 def init_picture(camera):
         camera.resolution = (2592, 1944)

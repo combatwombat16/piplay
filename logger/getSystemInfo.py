@@ -1,8 +1,6 @@
-#! /usr/bin/python3
-
-from helpers import convertCToF
-import subprocess
-import os
+import sys, os, subprocess
+sys.path.append("../")
+from helpers.helpers import convertCToF
 
 def get_memory_stats():
 	mem_stats = {}

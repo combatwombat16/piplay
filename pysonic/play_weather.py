@@ -1,6 +1,6 @@
 import sys, time
-from psonic import *
 sys.path.append("../")
+from psonic import *
 from weather_pilock.SenseHat_Data import Sensor
 from helpers.helpers import *
 
