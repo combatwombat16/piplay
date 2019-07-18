@@ -31,3 +31,6 @@ def get_datetime():
 	datetime_dict["timestamp"] = dt.isoformat()
 	datetime_dict["epoch"] = int(dt.timestamp() * 1000)
 	return datetime_dict
+
+def golden():
+    return (1 + 5 ** 0.5) / 2
