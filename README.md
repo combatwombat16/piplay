@@ -5,9 +5,9 @@
 
 
 ## Disclaimer
-- This project relies upon several physical and digital assets which will be listed below.  
-- I have no affiliation with any entities, implied or expressed, listed below other than being a dude trying to learn some stuff and have some fun.
-- I might break stuff, and am open to input/criticism/pull requests.
+> This project relies upon several physical and digital assets which will be listed below.  
+> I have no affiliation with any entities, implied or expressed, listed below other than being a dude trying to learn some stuff and have some fun.
+> I might break stuff, and am open to input/criticism/pull requests.
 
 
 ## Requirements
