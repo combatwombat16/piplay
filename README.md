@@ -1,6 +1,6 @@
 
 # piplay
-- This project is a container for all kinds of fooling around I do with my Raspberry Pi's.  
+> This project is a container for all kinds of fooling around I do with my Raspberry Pi's.  
 > This is really just my learning process.
 
 
