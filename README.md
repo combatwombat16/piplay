@@ -5,7 +5,9 @@
 
 
 ## Disclaimer
-> This project relies upon several physical and digital assets which will be listed below.  
+> This project relies upon several physical and digital assets.
+>
+>> A "best effort" of these assests will be listed below.  
 >
 > I have no affiliation with any entities, implied or expressed, listed below other than being a dude trying to learn some stuff and have some fun.
 >
