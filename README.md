@@ -17,13 +17,16 @@
 >> SD Card or alternative
 >
 > Raspberry Pi Camera utilizing the ribbon cable connector/interface
+>> May include options around NoIR at some point
 >
 > SenseHat
+>> Sensor data source and LED/joystick interactions
 
 
 ### Software
 > Raspbian base installation
 >> standard install with all packages and updated
+>> sonic-pi server required for sound playback
 >
 > jupyter-notebook
 >> pip3 install jupyter
