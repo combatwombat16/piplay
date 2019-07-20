@@ -11,6 +11,7 @@
 - I might break stuff, and am open to input/criticism/pull requests.
 
 
+## Requirements
 ### Hardware
 > Raspberry Pi 3+ (2+ probably?)
 >> Power supply
