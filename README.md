@@ -29,7 +29,8 @@
 ### Software
 > Raspbian base installation
 >> standard install with all packages and updated
->> sonic-pi server required for sound playback
+>>
+>> sonic-pi client/server
 >
 > jupyter-notebook
 >> pip3 install jupyter
