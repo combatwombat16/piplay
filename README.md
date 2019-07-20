@@ -14,6 +14,7 @@
 ### Hardware
 > Raspberry Pi 3+ (2+ probably?)
 >> Power supply
+>>
 >> SD Card or alternative
 >
 > Raspberry Pi Camera utilizing the ribbon cable connector/interface
