@@ -14,8 +14,8 @@
 ### Hardware
 > Raspberry Pi 3+ (2+ probably?)
 >> Power supply
->>
 >> SD Card or alternative
+>> Monitor/Mouse/Keyboard/Internet/...
 >
 > Raspberry Pi Camera utilizing the ribbon cable connector/interface
 >> May include options around NoIR at some point
