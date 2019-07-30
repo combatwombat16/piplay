@@ -1,6 +1,7 @@
 import sys, time
 sys.path.append("../")
-from psonic import *
+from python_sonic.psonic.synthesizers import Synth_Dict, BEEP
+from python_sonic.psonic.effects import Effect_Dict
 from weather_pilock.SenseHat_Data import Sensor
 from helpers.helpers import *
 import ipywidgets as widgets
@@ -14,7 +15,7 @@ class Notes(JsonSerializable):
                  attack = 0.0, decay = 0.0, 
                  sustain = 1.0, sustain_level = 1.0, 
                  release = 0.0, cutoff=0.0, cutoff_attack=0.0, 
-                 amp = 1.0, pan = 0.0):
+                 amp = 1.0, pan = 0.0, synth = BEEP):
         self.notes = notes
         self.attack = attack
         self.sustain = sustain
@@ -25,6 +26,7 @@ class Notes(JsonSerializable):
         self.cutoff_attack = cutoff_attack
         self.amp = amp
         self.pan = pan
+        self.synth = synth
 
 
 class Rates(JsonSerializable):
@@ -47,4 +49,10 @@ class NoteUI:
         self.release_slider = widgets.FloatSlider(value=0.5, min=0.0, max=2.0, step=0.1, description="release", orientation="horizontal")
         self.play_button = widgets.Button(
             description='Update'
+        )
+        self.synth_selector = widgets.Dropdown(
+            options = Synth_Dict
+        )
+        self.fx_multiselect = widgets.SelectMultiple(
+            options = Effect_Dict
         )
